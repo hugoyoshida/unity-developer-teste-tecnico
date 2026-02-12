@@ -50,7 +50,7 @@ public class AttachTarget : MonoBehaviour
             force = stiffness * Time.fixedDeltaTime * -correction;
             characterRigidbody.AddForce(force, ForceMode.Acceleration);
 
-            relativeVelocity = characterRigidbody.velocity - linkTransform.GetComponent<Rigidbody>().velocity;
+            relativeVelocity = characterRigidbody.linearVelocity - linkTransform.GetComponent<Rigidbody>().linearVelocity;
             characterRigidbody.AddForce(damping * Time.fixedDeltaTime * -relativeVelocity, ForceMode.Acceleration);
         }
 
